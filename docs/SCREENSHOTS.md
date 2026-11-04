@@ -29,4 +29,4 @@ Screenshots have only been cropped and saved as PNG; UI elements and text were n
 
 ## Workflow illustration
 
-`docs/assets/mac-ipad-workflow.svg` is an authored vector diagram showing a suggested two-display arrangement. Its device outlines, text and relationship tree are illustrative, not captured extension UI or a photograph. The extension runs on the Mac; Sidecar displays its separate window on an iPad. The README links to Apple's setup and compatibility guide. Physical Mac/iPad Sidecar behavior has not been tested for this project.
+`docs/assets/mac-ipad-workflow.svg` is an authored vector diagram showing a suggested two-display arrangement. Its device outlines, text and relationship tree are illustrative, not captured extension UI or a photograph. The extension runs on the Mac; Sidecar displays its separate window on an iPad. The README links to Apple's setup and compatibility guide.

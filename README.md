@@ -17,6 +17,20 @@ Map the connections between your browser tabs, keep the original question in vie
 
 *Compact mode, captured from the running extension. [Full application screenshot](docs/screenshots/research-map-full-en.png).*
 
+## The core: browse normally, branches form automatically
+
+**You do not have to operate the map to build the map.** Once recording is on, stay on the websites you are researching. Open links or continue researching something you copied, and Tab Flow Map connects the new tab to its source page automatically.
+
+| What you do on a website | What appears in the map |
+| --- | --- |
+| Open a link from page A in a new tab, using a normal click that opens a tab, a middle-click, or **Open link in new tab**. | The new page becomes a child branch of A. |
+| Copy a keyword or phrase from A, open a new tab, then paste it into a supported address-bar search or a website's search field. | When the copied text matches, the new tab is connected to A. |
+| Copy a URL from A, open a new tab, then paste it into the address bar and visit it. | The matching destination is connected back to A. |
+
+Continue from the new page and the next branch follows it: **review → product page → search for a term copied from that product page**. Leave the map visible beside your browser, or look at it when you need to find your way back. Clicking **+** or drawing connections in the map is optional.
+
+Copy-based connections use matching content within the new tab's first three tracked actions. Copying something and opening an unused blank tab alone does not establish a source relationship.
+
 ## Why I built this
 
 I was researching a product idea. I opened a few websites to understand one need, followed a review, compared another product, and found an interesting discussion. That discussion led to a different question. A few more tabs later, I could no longer find the page I started with.
@@ -54,10 +68,9 @@ The point of the example is the browsing process. It is not a product recommenda
 ## How to use it
 
 1. **Start with a question.** Open your starting page, click the extension icon, then **Start exploring**. Give the workflow a name such as “Carry-on packing cubes: buyer needs.”
-2. **Write down what you are trying to learn.** In **Detailed** view, select the starting node, open **Details**, and save a note under **Findings / next steps**.
-3. **Browse normally.** Open links in new tabs. Real link sources become branches. Copying text into a new tab can also connect the source when the text matches within the first three tracked actions.
-4. **Add an intentional detour.** Click a node's **+** to create a child tab, or use the canvas menu to add a starting point. Drag **+** to another node's connector to adjust its source.
-5. **Recover your train of thought.** Click a page title to return to that tab. In **Compact** mode, right-click a node and choose **Return to source tab**. In Detailed view, use **Return to source** or the source path. You can also search the map. Collapse completed branches to focus on the question at hand.
+2. **Keep working on your websites.** Open links in new tabs, or copy a keyword or URL from the current page and use it to search or visit a page in a new tab. Recognized link and copy sources automatically become parent–child branches; you do not need to return to the map for each step.
+3. **Look at the map when you need context.** Click a page title to return to that tab. In **Compact** mode, right-click a node and choose **Return to source tab**. In Detailed view, use **Return to source** or the source path. You can also search the map or collapse a branch to focus on the question at hand.
+4. **Add context only when useful.** To save a note, switch to **Detailed**, select a node, open **Details**, and use **Findings / next steps**. For manual organization, use a node's **+** to create a child tab, add a starting point from the canvas menu, or drag **+** to another node's connector to adjust its source.
 
 ![Compact mode: the real context menu returns a deep research branch to its source tab](docs/screenshots/return-to-source-en.png)
 
@@ -86,7 +99,7 @@ Keep the research pages on your Mac and the Compact map on an iPad beside it. Yo
 
 ![Suggested Mac and iPad layout: research on the Mac, a separate Compact map window on the iPad through Sidecar](docs/assets/mac-ipad-workflow.svg)
 
-*A workflow illustration, not a device screenshot. This layout has not been verified with physical Sidecar hardware for this project.*
+*A workflow illustration, not a device screenshot.*
 
 1. Connect a compatible Mac and iPad with **Sidecar**, using the iPad as an **extended display**. Both devices need the same Apple Account. Follow [Apple's setup and compatibility guide](https://support.apple.com/en-us/102597).
 2. In the map's display menu, choose **Separate window**, then **Compact** view. Drag that window to the iPad display; leave the browser pages on the Mac.
@@ -127,6 +140,7 @@ Load `.output/chrome-mv3/` as the unpacked extension. For development, run `pnpm
 
 ## Features and privacy
 
+- Automatic source branches while you browse: links opened in new tabs and matching copied text or URLs used in a new tab.
 - Compact, detailed and tree views; horizontal and vertical canvas layouts.
 - Search, notes, branches, manual connections, multi-selection and undo.
 - Side panel, separate map window and draggable page overlay.
