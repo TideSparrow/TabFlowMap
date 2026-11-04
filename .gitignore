@@ -1,0 +1,14 @@
+node_modules/
+.output/
+.wxt/
+output/
+coverage/
+.playwright-cli/
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crx

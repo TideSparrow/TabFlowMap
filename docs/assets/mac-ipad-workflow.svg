@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Mac for browsing, iPad for keeping the research map in view</title>
+  <desc id="description">A conceptual layout using Sidecar as an extended Mac display. Research pages stay on the Mac and a separate Compact map window sits on the iPad. The extension runs on the Mac; this is not an iPad app or cross-device tab sync.</desc>
+  <rect width="1400" height="720" rx="24" fill="#F3F6FC"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="64" y="67" fill="#182B49" font-size="34" font-weight="700">Give your research a second view.</text>
+    <text x="64" y="104" fill="#52637D" font-size="21">Read on your Mac. Keep the thread beside it.</text>
+
+    <text x="108" y="162" fill="#182B49" font-size="19" font-weight="700">MAC · READ &amp; COMPARE</text>
+    <rect x="86" y="184" width="748" height="368" rx="20" fill="#182B49"/>
+    <rect x="102" y="200" width="716" height="334" rx="8" fill="#FFFFFF"/>
+    <circle cx="460" cy="192" r="3" fill="#90A1B9"/>
+    <text x="136" y="245" fill="#52637D" font-size="16" font-weight="700">THE QUESTION IN FRONT OF YOU</text>
+    <text x="136" y="286" fill="#182B49" font-size="25" font-weight="700">What makes a better travel organizer?</text>
+    <rect x="136" y="314" width="190" height="134" rx="12" fill="#EFF4FE"/>
+    <rect x="346" y="314" width="190" height="134" rx="12" fill="#EFF4FE"/>
+    <rect x="556" y="314" width="222" height="134" rx="12" fill="#EFF4FE"/>
+    <text x="156" y="351" fill="#2563EB" font-size="17" font-weight="700">Read reviews</text>
+    <text x="156" y="383" fill="#52637D" font-size="16">Pain points</text>
+    <text x="156" y="411" fill="#52637D" font-size="16">Usage context</text>
+    <text x="366" y="351" fill="#2563EB" font-size="17" font-weight="700">Compare listings</text>
+    <text x="366" y="383" fill="#52637D" font-size="16">Alternatives</text>
+    <text x="366" y="411" fill="#52637D" font-size="16">Trade-offs</text>
+    <text x="576" y="351" fill="#2563EB" font-size="17" font-weight="700">Follow a useful tangent</text>
+    <text x="576" y="383" fill="#52637D" font-size="16">Materials</text>
+    <text x="576" y="411" fill="#52637D" font-size="16">Adjacent needs</text>
+    <text x="136" y="493" fill="#52637D" font-size="17">Your usual tabs, tab groups and bookmarks stay useful.</text>
+    <path d="M56 552H864L838 572H82L56 552Z" fill="#B6C4D8"/>
+    <path d="M393 552H527L519 560H401L393 552Z" fill="#8B9FB9"/>
+
+    <text x="974" y="162" fill="#182B49" font-size="19" font-weight="700">iPAD · KEEP THE THREAD</text>
+    <rect x="960" y="184" width="358" height="388" rx="27" fill="#182B49"/>
+    <rect x="975" y="200" width="328" height="356" rx="14" fill="#FFFFFF"/>
+    <text x="997" y="237" fill="#2563EB" font-size="16" font-weight="700">Separate window · Compact</text>
+    <rect x="998" y="260" width="281" height="52" rx="10" fill="#E9F0FE" stroke="#ACC4F5"/>
+    <text x="1015" y="292" fill="#182B49" font-size="17" font-weight="700">Original question</text>
+    <path d="M1021 312V398M1021 345H1042M1021 398H1042M1061 424V465H1081" stroke="#A2B7D9" stroke-width="3" stroke-linecap="round"/>
+    <rect x="1042" y="322" width="216" height="46" rx="9" fill="#F4F7FC" stroke="#D7E1EF"/>
+    <text x="1060" y="350" fill="#334968" font-size="17">Reviews</text>
+    <rect x="1042" y="377" width="216" height="46" rx="9" fill="#F4F7FC" stroke="#D7E1EF"/>
+    <text x="1060" y="405" fill="#334968" font-size="17">Product comparisons</text>
+    <rect x="1081" y="442" width="177" height="46" rx="9" fill="#F4F7FC" stroke="#D7E1EF"/>
+    <text x="1097" y="470" fill="#334968" font-size="17">A useful detour</text>
+    <text x="998" y="528" fill="#52637D" font-size="16">See the path. Return to its source.</text>
+
+    <path d="M862 359H938M928 349L938 359L928 369" stroke="#7B91B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="850" y="334" fill="#52637D" font-size="16">Sidecar</text>
+    <rect x="64" y="612" width="1272" height="58" rx="12" fill="#E7EEF9"/>
+    <text x="88" y="648" fill="#334968" font-size="20">One Mac browser · One map · Two displays</text>
+    <text x="64" y="701" fill="#52637D" font-size="15">Workflow illustration, not a device screenshot. The iPad displays a Mac window; no iPad app or cross-device tab sync is involved.</text>
+  </g>
+</svg>

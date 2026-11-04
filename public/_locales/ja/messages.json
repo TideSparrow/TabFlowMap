@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "Tab Flow Map"
+  },
+  "extensionDescription": {
+    "message": "ブラウザーのタブをつながりのあるワークフローに整理。タスクや元のタブをたどり、閲覧状況をローカルに復元。"
+  }
+}

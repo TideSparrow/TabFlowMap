@@ -1,0 +1,38 @@
+{
+  "name": "tab-flow-map",
+  "version": "1.0.0",
+  "description": "A local-first browser extension that maps your tabs into connected workflows.",
+  "type": "module",
+  "license": "MIT",
+  "packageManager": "pnpm@12.4.2",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "zip": "wxt zip && node scripts/package-source.mjs",
+    "compile": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "pnpm compile && pnpm test && pnpm audit:source",
+    "audit:source": "node scripts/audit-source.mjs",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "@radix-ui/react-tooltip": "1.2.8",
+    "@xyflow/react": "12.12.0",
+    "lucide-react": "1.16.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.15",
+    "@types/react-dom": "19.2.3",
+    "@wxt-dev/module-react": "1.2.2",
+    "esbuild": "0.28.2",
+    "fflate": "0.8.3",
+    "typescript": "5.9.3",
+    "vitest": "4.1.12",
+    "wxt": "0.21.5"
+  }
+}
