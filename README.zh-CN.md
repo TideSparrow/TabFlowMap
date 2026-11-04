@@ -11,7 +11,7 @@
 ![本地数据](https://img.shields.io/badge/data-stays_in_your_browser-16836b)
 ![多语言](https://img.shields.io/badge/languages-English_%C2%B7_%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87_%C2%B7_%E6%97%A5%E6%9C%AC%E8%AA%9E-6366f1)
 
-[English](README.md) · [如何使用](#如何使用) · [使用小技巧](#使用小技巧) · [安装](#安装) · [隐私说明](PRIVACY.md) · [支持项目](#支持项目)
+[English](README.md) · [如何使用](#如何使用) · [视图与展示方式](#选择适合当前任务的视图) · [使用小技巧](#使用小技巧) · [安装](#安装) · [隐私说明](PRIVACY.md) · [支持项目](#支持项目)
 
 ![Compact 精简模式：16 个真实调研标签及其来源分支](docs/screenshots/research-map-en.png)
 
@@ -60,13 +60,6 @@ Tab Flow Map 就是为这个问题做的：保留标签之间的来源关系。�
 | 忘了刚才是在看压缩效果、分类收纳，还是价格。 | 回到起点，读一眼最初写下的调研目标。 |
 | 页面越来越多，暂时不想看某一条线索。 | 折叠这条分支、搜索页面，或切到树状视图。 |
 
-<details>
-<summary>补充：展开查看同一次调研的树状视图</summary>
-
-![同一次调研的树状视图：把层级和来源逐条展开](docs/screenshots/research-tree-en.png)
-
-</details>
-
 ## 如何使用
 
 1. **从一个问题开始。** 打开起始页面，点击插件图标，在侧边栏中点击 **Start exploring**，给线路起一个名字，例如 `Carry-on packing cubes: buyer needs`。
@@ -76,7 +69,61 @@ Tab Flow Map 就是为这个问题做的：保留标签之间的来源关系。�
 
 ![Compact 模式直接右键返回来源标签，不用离开精简导图](docs/screenshots/return-to-source-en.png)
 
-**Compact** 适合看全局，**Detailed** 适合看备注和上下文，**Tree** 适合逐层阅读。画布菜单可以切换侧边栏、独立窗口和网页悬浮三种展示方式。
+## 选择适合当前任务的视图
+
+三种视图展示的是**同一条探索线路**。随着任务切换视图即可，不用重新开始，也不用重新整理分支。
+
+| 视图 | 适合什么时候 | 能做什么 |
+| --- | --- | --- |
+| **Compact · 精简导图** | 一边浏览，一边保留全局思路 | 用小节点看清分支，折叠暂时无关的线索；点击标题切换标签，右键节点返回来源。 |
+| **Detailed · 详细导图** | 看懂页面来路，记录判断与下一步 | 卡片显示域名和来源类型；打开 **Details** 查看来源路径、调整来源，保存 **Findings / next steps** 备注。 |
+| **Tree · 树状视图** | 分支很深，想逐层阅读 | 用缩进列表看父子关系，展开或折叠分支，直接跳到目标页面。 |
+
+### Compact：先看清全局
+
+日常浏览可以从这里开始。节点占用空间小，能容纳更多线索，更容易看清最初的问题和后来走出的岔路。本文开头就是这种视图，下图补充展示完整画布和控制按钮。
+
+![Compact 精简导图：实际调研分支与完整画布控件](docs/screenshots/research-map-full-en.png)
+
+### Detailed：把思考留在页面旁边
+
+某个页面值得记一笔时，切到详细导图。下面是另一次真实的七标签调研：选中的商品卡片显示来源路径，右侧保存了待验证的问题和下一步。切换视图后，备注仍保留在线路中。
+
+![Detailed 详细导图：页面卡片、来源路径和已保存的调研问题](docs/screenshots/mode-detailed-en.png)
+
+### Tree：沿着层级逐条找回主线
+
+层级很深，或更习惯看列表时，可以切到树状视图。缩进直接表达页面的来源关系；折叠一条分支后，就能专注于另一条线索。
+
+![Tree 树状视图：最初 16 个真实调研标签的可展开层级](docs/screenshots/research-tree-en.png)
+
+**怎么切换：** 点击右下角圆形 **Open canvas menu** 按钮 → **More tools** → **Compact / Detailed / Tree**。Detailed 视图的顶部工具栏也直接显示这三个按钮。两种导图视图还可以用方向按钮切换横向、纵向布局；**Show entire workflow** 可以让全部分支适应当前可用空间。
+
+## 选择导图的展示位置
+
+**视图**决定标签怎么呈现，**展示位置**决定导图放在哪里。例如，Compact 可以放在侧边栏、独立窗口或网页悬浮窗中，它们使用同一份本地线路数据。
+
+打开 **Open canvas menu → Display mode** 后选择：
+
+| 展示方式 | 适合什么时候 | 使用方式 |
+| --- | --- | --- |
+| **Side panel · 侧边栏** | 阅读网页时，始终看得见旁边的思路 | 导图放在浏览器侧边栏，点击插件图标即可打开。 |
+| **Separate window · 独立窗口** | 分支较多，需要更大空间，或有第二块屏幕 | 导图单独打开，可以正常移动、调整窗口大小，也适合下文的 [Mac + iPad 搭配](#mac--ipad一边读资料一边看思路)。 |
+| **Page overlay · 网页悬浮** | 临时看看自己走到了哪，不想离开当前网站 | 导图浮在普通 HTTP(S) 网页上。拖标题栏移动，拖右下角调整大小，点击 **×** 隐藏。 |
+
+### 侧边栏：网页和思路一起看
+
+![实际商品页面旁的 Compact 导图侧边栏](docs/screenshots/mode-side-panel-en.png)
+
+### 独立窗口：给整条线路留出空间
+
+![同一条七标签调研线路，在独立窗口中使用 Compact 视图](docs/screenshots/mode-window-en.png)
+
+### 网页悬浮：在当前页面临时理清思路
+
+![Compact 导图悬浮在实际打开的随身行李打包文章上](docs/screenshots/mode-overlay-en.png)
+
+如果某个页面没有正常显示悬浮窗，可以使用 **Side panel** 或 **Separate window**。浏览器内部页面不支持网页悬浮。
 
 <details>
 <summary>补充：语言设置</summary>

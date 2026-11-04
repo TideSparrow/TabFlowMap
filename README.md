@@ -11,7 +11,7 @@ Map the connections between your browser tabs, keep the original question in vie
 ![Local first](https://img.shields.io/badge/data-stays_in_your_browser-16836b)
 ![Languages](https://img.shields.io/badge/languages-English_%C2%B7_%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87_%C2%B7_%E6%97%A5%E6%9C%AC%E8%AA%9E-6366f1)
 
-[中文说明](README.zh-CN.md) · [How to use](#how-to-use-it) · [Tips](#small-habits-that-keep-research-clear) · [Install](#install) · [Privacy](PRIVACY.md) · [Support](#support-the-project)
+[中文说明](README.zh-CN.md) · [How to use](#how-to-use-it) · [Views and display modes](#choose-a-view) · [Tips](#small-habits-that-keep-research-clear) · [Install](#install) · [Privacy](PRIVACY.md) · [Support](#support-the-project)
 
 ![Compact mode: sixteen real shopping-research tabs organized into connected branches](docs/screenshots/research-map-en.png)
 
@@ -58,13 +58,6 @@ The point of the example is the browsing process. It is not a product recommenda
 | You forget whether you were checking compression, organization or price. | Return to the starting node and read the note with your original question. |
 | The map gets busy. | Collapse a branch, search for a page, or use the tree view. |
 
-<details>
-<summary>See the same session as a source tree</summary>
-
-![The same research shown as an expandable source tree](docs/screenshots/research-tree-en.png)
-
-</details>
-
 ## How to use it
 
 1. **Start with a question.** Open your starting page, click the extension icon, then **Start exploring**. Give the workflow a name such as “Carry-on packing cubes: buyer needs.”
@@ -74,7 +67,61 @@ The point of the example is the browsing process. It is not a product recommenda
 
 ![Compact mode: the real context menu returns a deep research branch to its source tab](docs/screenshots/return-to-source-en.png)
 
-Use **Compact** for an overview, **Detailed** for notes and context, and **Tree** for a readable hierarchy. The canvas menu switches between the browser side panel, a separate window and an overlay on the page.
+## Choose a view
+
+The three views show the **same workflow**. Switch views as your task changes; you do not need to start over or rebuild the branches.
+
+| View | Best for | What you can do |
+| --- | --- | --- |
+| **Compact** | Keeping the whole research thread in sight | Scan small nodes and their connections, collapse distractions, click titles to switch tabs, and right-click a node to return to its source. |
+| **Detailed** | Understanding a page and recording your thinking | See page cards with domains and source types. Open **Details** to follow the source path, change a source, or save **Findings / next steps**. |
+| **Tree** | Reading a deep hierarchy without panning around | Follow indented parent–child rows, expand or collapse branches, and jump straight to a page. |
+
+### Compact — keep the overview
+
+Start here for everyday browsing. Small nodes leave room for more branches, so it is easier to spot the original question and the detours. The screenshot at the top shows this view; the full version below also shows the map controls.
+
+![Compact view with connected research branches and canvas controls](docs/screenshots/research-map-full-en.png)
+
+### Detailed — keep the reasoning with the page
+
+Switch here when a page deserves a note. In this real seven-tab research session, the selected product card shows where it came from and a saved question to investigate next. Notes belong to the workflow and remain available when you switch views.
+
+![Detailed view with page cards, source path and a saved research question](docs/screenshots/mode-detailed-en.png)
+
+### Tree — read the route one level at a time
+
+Use this when the map has many levels, or you prefer a list. Indentation makes the source hierarchy explicit; fold a branch to focus on another part of the research.
+
+![Tree view showing the original sixteen-tab research session as an expandable hierarchy](docs/screenshots/research-tree-en.png)
+
+**How to switch:** open the round **Open canvas menu** button at the bottom right → **More tools** → **Compact / Detailed / Tree**. In Detailed view, the three buttons are also visible in the top toolbar. For either canvas view, the direction control switches between horizontal and vertical layouts; **Show entire workflow** fits the branches into the available space.
+
+## Choose where the map lives
+
+A **view** controls how tabs look. A **display location** controls where the map appears. For example, Compact works in the side panel, a separate window, or a page overlay. These locations use the same locally stored workflow.
+
+Open **Open canvas menu → Display mode**, then choose:
+
+| Display location | When to use it | How it behaves |
+| --- | --- | --- |
+| **Side panel** | Read a website and keep its research thread beside it | The map sits in the browser's side panel. Clicking the extension icon opens it. |
+| **Separate window** | Give a large workflow more room, or use a second display | The map opens in its own window. Move or resize it normally; it also suits the [Mac + iPad setup](#mac--ipad-read-on-one-screen-keep-the-thread-on-the-other). |
+| **Page overlay** | Check your bearings without leaving the current website | The map floats over an ordinary HTTP(S) page. Drag its title bar to move it, drag the lower-right handle to resize it, and use **×** to hide it. |
+
+### Side panel — browse and follow the thread together
+
+![Compact map beside the actual packing-cube product page](docs/screenshots/mode-side-panel-en.png)
+
+### Separate window — room for the whole workflow
+
+![The same seven-tab workflow in a separate Compact map window](docs/screenshots/mode-window-en.png)
+
+### Page overlay — a quick look without leaving the page
+
+![The Compact map floating over the actual carry-on packing article](docs/screenshots/mode-overlay-en.png)
+
+If a page does not display the overlay, use **Side panel** or **Separate window** instead. Browser-internal pages do not support page overlays.
 
 <details>
 <summary>Language settings</summary>
