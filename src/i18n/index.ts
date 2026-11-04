@@ -33,7 +33,9 @@ export function initializeI18n(): Promise<void> {
     browser.storage.onChanged.addListener((changes, area) => {
       if (area === "local" && changes[languageStorageKey]) apply(changes[languageStorageKey].newValue);
     });
-    initialized = browser.storage.local.get(languageStorageKey).then((stored) => apply(stored[languageStorageKey]));
+    initialized = browser.storage.local.get(languageStorageKey).then((stored) => apply(stored[languageStorageKey]))
+      // Keep the browser language when the preference read fails; never overwrite saved data.
+      .catch(() => {});
   }
   return initialized;
 }

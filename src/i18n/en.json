@@ -276,5 +276,8 @@
   "a11yEdge": "Press Enter or Space to select an edge and Delete to remove.",
   "a11yInteractive": "Toggle interaction",
   "a11yHandle": "Node connector",
-  "connectionFromTo": "Connection from {0} to {1}"
+  "connectionFromTo": "Connection from {0} to {1}",
+  "mapLoadErrorTitle": "The map could not be displayed",
+  "mapLoadErrorDescription": "Reload the map to try again. Your saved workflows have not been deleted.",
+  "overlayLoadError": "The map could not load on this page. Try again, or use the extension icon to open the side panel."
 }

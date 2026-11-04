@@ -276,5 +276,8 @@
   "a11yEdge": "Enter または Space で接続線を選択、Delete で削除します。",
   "a11yInteractive": "操作モードを切り替え",
   "a11yHandle": "ノードの接続点",
-  "connectionFromTo": "{0} から {1} への接続"
+  "connectionFromTo": "{0} から {1} への接続",
+  "mapLoadErrorTitle": "マップを表示できませんでした",
+  "mapLoadErrorDescription": "マップを再読み込みしてください。保存済みのワークフローは削除されていません。",
+  "overlayLoadError": "このページでマップを読み込めませんでした。再試行するか、拡張機能のアイコンからサイドパネルを開いてください。"
 }

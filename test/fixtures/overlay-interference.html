@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Overlay recovery verification</title>
+<style>body{max-width:720px;margin:40px;font:16px/1.6 system-ui}button{padding:10px;margin:8px 4px}output{display:block}</style>
+<h1>Overlay recovery verification</h1>
+<p>This local test page reproduces an empty srcdoc overriding the extension's own iframe URL. Open the map overlay before using these controls.</p>
+<button id="once">Blank map once</button>
+<button id="persistent">Interfere continuously</button>
+<button id="stop">Stop interference</button>
+<output id="result" aria-live="polite">No interference applied.</output>
+<script>
+  let observer;
+  const result = document.querySelector('#result');
+  function frame() {
+    const target = document.getElementById('tab-flow-map-host')?.shadowRoot?.querySelector('iframe');
+    if (!target) result.textContent = 'Open the page overlay first.';
+    return target;
+  }
+  document.querySelector('#once').onclick = () => {
+    const target = frame();
+    if (!target) return;
+    target.setAttribute('srcdoc', '');
+    result.textContent = 'Applied an empty srcdoc once.';
+  };
+  document.querySelector('#persistent').onclick = () => {
+    const target = frame();
+    if (!target) return;
+    observer?.disconnect();
+    observer = new MutationObserver(() => {
+      if (!target.hasAttribute('srcdoc')) target.setAttribute('srcdoc', '');
+    });
+    observer.observe(target, { attributes: true, attributeFilter: ['srcdoc'] });
+    target.setAttribute('srcdoc', '');
+    result.textContent = 'Continuously overriding the map document.';
+  };
+  document.querySelector('#stop').onclick = () => {
+    observer?.disconnect();
+    result.textContent = 'Interference stopped. Use Retry in the overlay if needed.';
+  };
+</script>
+</html>

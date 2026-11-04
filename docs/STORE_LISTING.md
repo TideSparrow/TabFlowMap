@@ -5,18 +5,18 @@ Copy the text blocks below into the matching store language. The basic fields an
 ## Basic information
 
 - Name: **Tab Flow Map**
-- Version: **1.0.0**
+- Version: **1.0.1**
 - Suggested category: productivity / workflow organization; choose the matching category in the current store form.
 - Website: https://github.com/TideSparrow/TabFlowMap
 - Support: https://github.com/TideSparrow/TabFlowMap/issues
 - Privacy policy: https://github.com/TideSparrow/TabFlowMap/blob/main/PRIVACY.md
 - Downloads and release history: https://github.com/TideSparrow/TabFlowMap/releases
-- Package: `tab-flow-map-1.0.0-chrome.zip`
+- Package: `tab-flow-map-1.0.1-chrome.zip`
 - Store icon: `public/icon/128.png`
 
 Use the repository homepage in the Website field and Issues in the Support URL field. Keep the GitHub links in the descriptions too, so readers can find the source, usage tips, updates and feedback channel directly.
 
-The summaries below match the localized manifest descriptions in the published v1.0.0 package. Chrome takes the summary from the package's `description`; changing it requires updating the manifest localization in a new package. Each summary is within the [132-character limit](https://developer.chrome.com/docs/webstore/prepare/).
+The summaries below match the localized manifest descriptions in the v1.0.1 package. Chrome takes the summary from the package's `description`; changing it requires updating the manifest localization in a new package. Each summary is within the [132-character limit](https://developer.chrome.com/docs/webstore/prepare/).
 
 ## English
 
@@ -227,7 +227,7 @@ Recommended order: `research-map-full-en.png` (Compact overview), `research-tabs
 
 ## Publisher handoff
 
-1. Upload the extension ZIP from the v1.0.0 GitHub release, rather than the source ZIP.
+1. Upload the extension ZIP from the v1.0.1 GitHub release, rather than the source ZIP.
 2. Copy the matching language's text blocks above. Keep the GitHub URLs in the detailed description.
 3. Fill Website, Support URL and Privacy-policy URL using Basic information.
 4. Add the icon and real screenshots, then complete the single-purpose and permission fields using the explanations above.

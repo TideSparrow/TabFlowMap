@@ -276,5 +276,8 @@
   "a11yEdge": "按 Enter 或空格选择连接线，Delete 删除。",
   "a11yInteractive": "切换交互模式",
   "a11yHandle": "节点连接点",
-  "connectionFromTo": "从 {0} 到 {1} 的连接"
+  "connectionFromTo": "从 {0} 到 {1} 的连接",
+  "mapLoadErrorTitle": "导图未能显示",
+  "mapLoadErrorDescription": "重新加载导图后再试。已保存的探索线路未被删除。",
+  "overlayLoadError": "导图未能在此页面加载。请重试，或点击插件图标打开侧边栏。"
 }

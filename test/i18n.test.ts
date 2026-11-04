@@ -38,6 +38,15 @@ describe("language settings across extension contexts", () => {
     await expect(i18n.setLanguage("ja")).rejects.toThrow();
     expect(i18n.getLocale()).toBe("en");
   });
+  it("keeps the map usable when the saved language cannot be read", async () => {
+    vi.mocked(browser.storage.local.get).mockRejectedValueOnce(new Error("Storage unavailable"));
+    const i18n = await import("../src/i18n");
+    await expect(i18n.initializeI18n()).resolves.toBeUndefined();
+    expect(i18n.getLocale()).toBe("en");
+    expect(browser.storage.local.set).not.toHaveBeenCalled();
+    changed({ [i18n.languageStorageKey]: { newValue: "ja" } }, "local");
+    expect(i18n.getLocale()).toBe("ja");
+  });
   it("normalizes browser locales and falls back safely for unsupported languages", async () => {
     const i18n = await import("../src/i18n");
     expect(i18n.resolveLocale("zh-TW")).toBe("zh-CN");

@@ -1,6 +1,7 @@
 import { t, subscribeLanguage } from "../i18n";
 import { tabMapGeometryKey, tabMapOverlayKey } from "../types/map";
 import { defaultMapSize, finiteNumber, restoredMapSize } from "../core/window-geometry";
+import { monitorMapFrame, type FrameStatus } from "./frame-health";
 
 type Geometry = { x: number; y: number; width: number; height: number };
 const defaultGeometry: Geometry = { x: 30, y: 70, ...defaultMapSize };
@@ -20,16 +21,20 @@ export async function mountFloatingMap() {
     iframe { border:0; width:100%; flex:1; min-height:0; background:white; }
     .resize { position:absolute; bottom:0; right:0; width:20px; height:20px; cursor:nwse-resize; touch-action:none;
       background:linear-gradient(135deg,transparent 50%,#94a3b8 50%,#94a3b8 56%,transparent 56%,transparent 67%,#94a3b8 67%,#94a3b8 73%,transparent 73%); }
-  </style><div class="frame"><div class="bar"><span>${t("overlayTitle")}</span><button aria-label="${t("overlayClose")}" title="${t("overlayClose")}">×</button></div><div class="resize" tabindex="0" role="button" aria-label="${t("overlayResize")}" title="${t("overlayResizeDrag")}"></div></div>`;
+    .notice { position:absolute; inset:36px 0 0; padding:24px; display:flex; flex-direction:column; justify-content:center; align-items:center; background:white; color:#334155; font:14px/1.6 system-ui; text-align:center; }
+    .notice[hidden], .notice button[hidden] { display:none; }
+    .notice button { border:1px solid #cbd5e1; }
+  </style><div class="frame"><div class="bar"><span>${t("overlayTitle")}</span><button aria-label="${t("overlayClose")}" title="${t("overlayClose")}">×</button></div><div class="resize" tabindex="0" role="button" aria-label="${t("overlayResize")}" title="${t("overlayResizeDrag")}"></div><div class="notice" role="status"><p></p><button hidden></button></div></div>`;
   document.documentElement.append(host);
-  const unsubscribeLanguage = subscribeLanguage(() => {
+  function updateTranslations() {
     shadow.querySelector(".bar span")!.textContent = t("overlayTitle");
     const close = shadow.querySelector("button")!;
     close.setAttribute("aria-label", t("overlayClose")); close.title = t("overlayClose");
     const handle = shadow.querySelector<HTMLElement>(".resize")!;
     handle.setAttribute("aria-label", t("overlayResize")); handle.title = t("overlayResizeDrag");
     if (iframe) iframe.title = t("m126");
-  });
+    updateStatus(frameStatus);
+  }
   const stored = await browser.storage.local.get([tabMapGeometryKey, tabMapOverlayKey]);
   function restore(value: unknown): Geometry {
     const saved = value && typeof value === "object" ? value as Partial<Geometry> : {};
@@ -40,6 +45,19 @@ export async function mountFloatingMap() {
   const bar = shadow.querySelector<HTMLDivElement>(".bar")!;
   const resize = shadow.querySelector<HTMLDivElement>(".resize")!;
   let iframe: HTMLIFrameElement | undefined;
+  let health: ReturnType<typeof monitorMapFrame> | undefined;
+  let frameStatus: FrameStatus = "loading";
+  const notice = shadow.querySelector<HTMLDivElement>(".notice")!;
+  const retry = notice.querySelector("button")!;
+  function updateStatus(value: FrameStatus) {
+    frameStatus = value;
+    notice.hidden = value === "ready";
+    notice.setAttribute("role", value === "failed" ? "alert" : "status");
+    notice.querySelector("p")!.textContent = t(value === "failed" ? "overlayLoadError" : "m072");
+    retry.hidden = value !== "failed";
+    retry.textContent = t("m071");
+  }
+  retry.addEventListener("click", () => health?.retry());
   let active = false;
 
   function clamp() {
@@ -60,6 +78,7 @@ export async function mountFloatingMap() {
       iframe.src = browser.runtime.getURL("/tab-map.html?mode=embedded");
       iframe.title = t("m126");
       iframe.allow = "clipboard-read; clipboard-write";
+      health = monitorMapFrame(iframe, iframe.src, updateStatus);
       frame.insertBefore(iframe, resize);
     }
     host.style.display = visible ? "block" : "none";
@@ -118,5 +137,7 @@ export async function mountFloatingMap() {
   };
   browser.storage.onChanged.addListener(listener);
   show(stored[tabMapOverlayKey] === true);
-  return () => { unsubscribeLanguage(); host.remove(); window.removeEventListener("resize", onResize); browser.storage.onChanged.removeListener(listener); };
+  const unsubscribeLanguage = subscribeLanguage(updateTranslations);
+  updateTranslations();
+  return () => { health?.dispose(); unsubscribeLanguage(); host.remove(); window.removeEventListener("resize", onResize); browser.storage.onChanged.removeListener(listener); };
 }

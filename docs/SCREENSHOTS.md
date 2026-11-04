@@ -18,7 +18,7 @@ Other branches compare Amazon packing-cube listings, individual products, a bran
 
 A second real session followed seven tabs: a Google search for `compression packing cubes carry on`, an Amazon TRIPPED listing, the Tripped carry-on product, Eagle Creek compression cubes, and three pages reached through the Tripped product and packing-guide links. The deepest chain is **Google → carry-on product → packing guides → carry-on packing article**. These are new captures, not alternative views of the original sixteen-tab session. The Detailed note records a question and planned checks, not a product conclusion.
 
-The overlay capture was verified on the packing article. The carry-on product page in the same session displayed a blank overlay, so the screenshots do not imply that overlays work on every website; the README gives the side panel and separate window as fallbacks.
+The original v1.0.0 overlay capture was verified on the packing article. The carry-on product page in the same session displayed a blank overlay. That failure was later reproduced and fixed in v1.0.1; see the [diagnosis and actual Chrome verification](verification/v1.0.1.md). Screenshots do not imply that overlays work on every website; the README gives the side panel and separate window as fallbacks.
 
 ## Images
 
