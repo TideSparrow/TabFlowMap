@@ -22,13 +22,7 @@ The release package uses bundled scripts and assets. There is no remote executab
 
 ## Suggested listing text
 
-**Name:** Tab Flow Map
-
-**English:** Turn your browser tabs into connected workflows. Follow where each task came from, add notes, search your map and keep pinned tabs close. Choose a compact map, a detailed map or a tree, in the side panel, a separate window or a page overlay. Includes undo and browsing-context recovery. English, Simplified Chinese and Japanese. No account or backend; data stays in your browser.
-
-**简体中文：** 将浏览器标签整理成有关联的工作流。追溯任务来源、添加备注、搜索导图，管理固定标签。支持精简、完整和树状视图，以及侧边栏、独立窗口、网页悬浮三种展示方式。包含撤销与浏览上下文恢复。支持中文、英文、日文，无需账号，数据保存在本地浏览器。
-
-**日本語：** ブラウザーのタブをつながりのあるワークフローに整理。元のタブをたどり、メモや検索、固定タブを活用できます。コンパクト・詳細・ツリー表示と、サイドパネル・別ウィンドウ・フローティングに対応。元に戻す操作と閲覧状況の復元機能を備え、英語・簡体字中国語・日本語に対応します。アカウント不要で、データはブラウザー内に保存されます。
+Use [STORE_LISTING.md](STORE_LISTING.md) as the single source for English, Simplified Chinese and Japanese listing copy. It includes ready-to-copy descriptions, summaries matching the published manifest, GitHub homepage/support/privacy links, screenshot order, and permission explanations. Each description directs readers to GitHub for source code, usage guides, feedback and release downloads.
 
 ## Open source
 
