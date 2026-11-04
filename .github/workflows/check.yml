@@ -25,6 +25,7 @@ jobs:
           path: .output/*.zip
           if-no-files-found: error
           retention-days: 14
+          include-hidden-files: true
   publish:
     if: startsWith(github.ref, 'refs/tags/v')
     needs: check
