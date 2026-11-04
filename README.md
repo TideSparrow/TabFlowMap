@@ -126,6 +126,8 @@ The extension still runs in Chrome or Edge **on the Mac**. The iPad displays tha
 
 The release target is Chrome and Chromium-based Edge, using Manifest V3.
 
+Download the extension ZIP from [GitHub Releases](https://github.com/TideSparrow/TabFlowMap/releases/latest). These downloads are for manual installation; a GitHub release is separate from browser-store approval.
+
 **From a packaged ZIP:** unzip the extension package, open `chrome://extensions` or `edge://extensions`, enable Developer mode, choose **Load unpacked**, and select the folder containing `manifest.json`. Click the Tab Flow Map icon to open the side panel.
 
 **From source:** use Node.js 22.12+ and the pnpm version pinned in `package.json`.

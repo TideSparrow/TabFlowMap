@@ -32,4 +32,10 @@ The release package uses bundled scripts and assets. There is no remote executab
 
 ## Open source
 
-Publish the source repository or the `*-sources.zip` archive with `LICENSE`, third-party notices, the lockfile and documentation. The CI workflow only builds and retains artifacts; it needs no browser-store credentials and does not publish automatically. Store listing screenshots and privacy-policy hosting are publisher responsibilities.
+Publish the source repository or the `*-sources.zip` archive with `LICENSE`, third-party notices, the lockfile and documentation. The source archive includes `pnpm-workspace.yaml`, which explicitly allows the pinned esbuild dependency's installation script for clean builds.
+
+## GitHub releases
+
+Set the package version and add matching notes at `docs/releases/vX.Y.Z.md`. After committing and pushing, create an annotated `vX.Y.Z` tag and push that tag. The **Check and package** workflow runs installation, tests, packaging and the source audit. Only when these pass does its publish job create the GitHub release with the extension ZIP, source ZIP and `SHA256SUMS.txt`.
+
+The tag must match `package.json`. Publishing uses GitHub's temporary repository token, with write access limited to the publish job. No personal token or browser-store credentials are stored in the repository. Main-branch pushes build artifacts without creating a release. Chrome Web Store and Edge Add-ons submissions are separate; copy-ready store information is in [STORE_LISTING.md](STORE_LISTING.md).

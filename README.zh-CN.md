@@ -128,6 +128,8 @@ Mac 上保留正在阅读的评测、商品和资料页，把 Compact 导图放�
 
 发布目标为 Chrome 和基于 Chromium 的 Edge，使用 Manifest V3。
 
+从 [GitHub Releases](https://github.com/TideSparrow/TabFlowMap/releases/latest) 下载插件 ZIP，按下方步骤手动安装。GitHub 版本发布与浏览器商店审核是独立流程。
+
 **使用安装包：** 解压插件 ZIP，打开 `chrome://extensions` 或 `edge://extensions`，开启开发者模式，点击“加载已解压的扩展程序”，选择包含 `manifest.json` 的目录。点击 Tab Flow Map 图标即可打开侧边栏。
 
 **从源码构建：** 需要 Node.js 22.12+，pnpm 版本以 `package.json` 中固定的版本为准。

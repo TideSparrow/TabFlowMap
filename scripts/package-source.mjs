@@ -4,7 +4,7 @@ import { zipSync } from "fflate";
 // An explicit source allowlist keeps local profiles, credentials and build output out
 // of public archives. Include tests: store-review source packaging tools omit them.
 const directories = ["src", "public", "scripts", "test", "docs", ".github"];
-const rootFiles = ["package.json", "pnpm-lock.yaml", "tsconfig.json", "wxt.config.ts", "AGENTS.md", "LICENSE", "PRIVACY.md", "THIRD_PARTY_NOTICES.md", "README.md", "README.zh-CN.md", ".gitignore", ".npmrc"];
+const rootFiles = ["package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "tsconfig.json", "wxt.config.ts", "AGENTS.md", "LICENSE", "PRIVACY.md", "THIRD_PARTY_NOTICES.md", "README.md", "README.zh-CN.md", ".gitignore", ".npmrc"];
 const files = {};
 const excluded = /(?:^|\/)(?:\.env(?:\..*)?|\.DS_Store)$|\.(?:pem|key|p12|pfx|crx)$/i;
 
