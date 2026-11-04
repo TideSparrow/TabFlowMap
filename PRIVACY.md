@@ -26,6 +26,10 @@ The saved graph, positions, language preference and restart checkpoint use exten
 
 There is no permission for browser history, downloads, identity, debugger access or network-request rewriting. URLs can contain personal information; map data remains within this browser profile.
 
+## Limited use
+
+Tab Flow Map's use of information received from Chrome APIs adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements. Data access is used only for the disclosed tab-mapping, source-tracking and recovery features. The extension does not use or transfer this data for advertising, creditworthiness or lending decisions, and does not sell user data.
+
 ## External websites
 
 Opening a tab, following a link or searching intentionally visits the chosen website or search engine. Those websites process the normal browser request under their own policies. Site icons are requested through the browser's favicon service. Browser-store delivery and updates are managed by the browser store, not by a custom update server.

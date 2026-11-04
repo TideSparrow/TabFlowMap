@@ -200,6 +200,8 @@ https://github.com/TideSparrow/TabFlowMap/releases
 
 ## Single purpose and permissions
 
+Use [PRIVACY_FORM.md](PRIVACY_FORM.md) for copy-ready explanations for each Privacy practices form field, remote-code selection and data-type disclosures. Local processing still needs to be disclosed.
+
 **Single purpose:** Visually organize browser tabs and their source relationships to help users follow research and return to its starting point.
 
 | Permission | Why it is used |
