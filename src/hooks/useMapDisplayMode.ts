@@ -3,7 +3,7 @@ import type { MapDisplayMode } from "../core/view-options";
 
 const key = "tab-flow-map-display-mode.v1";
 export function useMapDisplayMode() {
-  const [displayMode, setMode] = useState<MapDisplayMode>("detailed");
+  const [displayMode, setMode] = useState<MapDisplayMode>("compact");
   useEffect(() => {
     let active = true;
     let changed = false;
