@@ -24,7 +24,8 @@ export function isLanguagePreference(value: unknown): value is LanguagePreferenc
 function apply(value: unknown) {
   preference = isLanguagePreference(value) ? value : "system";
   locale = preference === "system" ? resolveLocale(browser.i18n.getUILanguage()) : preference;
-  if (typeof document !== "undefined") document.documentElement.lang = locale;
+  // document_start content scripts can run before the HTML root exists.
+  if (typeof document !== "undefined" && document.documentElement) document.documentElement.lang = locale;
   listeners.forEach((notify) => notify());
 }
 export function initializeI18n(): Promise<void> {

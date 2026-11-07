@@ -6,10 +6,10 @@ import { installLineageCapture } from "../content/capture";
 export default defineContentScript({
   matches: ["http://*/*", "https://*/*"],
   runAt: "document_start",
-  async main(ctx) {
+  main(ctx) {
     if (window.top !== window || browser.extension.inIncognitoContext) return;
-    await initializeI18n();
-    if (ctx.isInvalid) return;
+    // Capture source events immediately; only the visible map needs the saved language.
+    const languageReady = initializeI18n();
     const send = (message: Record<string, unknown>) => browser.runtime.sendMessage({ type: tabMapMessageType, ...message }).catch(() => undefined);
     let timer: ReturnType<typeof setTimeout> | undefined;
     let restoring = false;
@@ -48,7 +48,9 @@ export default defineContentScript({
     };
     browser.runtime.onMessage.addListener(listener);
     ctx.onInvalidated(() => { clearTimeout(timer); browser.runtime.onMessage.removeListener(listener); });
-    function ready() {
+    async function ready() {
+      await languageReady;
+      if (ctx.isInvalid) return;
       void mountFloatingMap().then((dispose) => ctx.onInvalidated(dispose)).catch(() => undefined);
       void send({ action: "ready", url: location.href }).then((result) => {
         if (result?.restore) restore(result.restore);

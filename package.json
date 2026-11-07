@@ -1,6 +1,6 @@
 {
   "name": "tab-flow-map",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A local-first browser extension that maps your tabs into connected workflows.",
   "type": "module",
   "license": "MIT",

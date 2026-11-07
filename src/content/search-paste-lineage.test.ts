@@ -61,6 +61,22 @@ describe("copy to search lineage in an independent map window", () => {
   });
   afterEach(() => { dispose(); vi.unstubAllGlobals(); });
 
+  it.each(["address bar", "Google search field"])("attaches a word copied from page text through the %s", async (target) => {
+    vi.stubGlobal("window", { getSelection: () => ({ toString: () => "image editor" }) });
+    emit("copy", new TestElement()); await view();
+    if (target === "address bar") await open("https://www.google.com/search?q=image+editor");
+    else {
+      await open("https://www.google.com/");
+      emit("pointerdown", new TestInput());
+      emit("paste", new TestInput());
+      visit("https://www.google.com/search?q=image+editor");
+    }
+    const result = await view();
+    expect(result.nodes).toHaveLength(2);
+    expect(result.nodes[1]).toMatchObject({ parentId: rootId, kind: "copied", keyword: "image editor" });
+    expect(result.runtime.pasteWindows[2]).toBeUndefined();
+  });
+
   it.each(["copy", "cut"])("attaches GitHub search after %s, opening search, focusing twice and pasting", async (action) => {
     emit(action, new TestInput()); await view(); await open();
     emit("pointerdown", new TestElement()); // Expand the search dialog: second action.
