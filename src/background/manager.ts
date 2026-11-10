@@ -10,6 +10,7 @@ import { reorderPinnedTabs } from "./pinned/reorder";
 import { createClosedTabRecovery } from "./recovery/closed-tab-recovery";
 import { createBrowserRestartRecovery } from "./recovery/browser-restart";
 import { initializeMapWindows } from "./windows";
+import { readPagePosition } from "./page-position";
 import {
   emptyMapRuntime, isMapMessage, tabMapRuntimeKey, tabMapStateKey,
   type MapCommand, type MapPlacement, type MapNode, type MapRuntime, type MapState, type PasteWindow,
@@ -428,7 +429,7 @@ export function initializeTabMapManager(openSidePanel?: (windowId: number) => Pr
   async function capturePosition(tabId: number) {
     const node = boundNode(tabId);
     if (!node) return;
-    const position = await browser.tabs.sendMessage(tabId, { type: "tab-flow-map-snapshot" }).catch(() => undefined);
+    const position = await readPagePosition(tabId);
     if (position?.url !== node.url || !Number.isFinite(position.scrollX) || !Number.isFinite(position.scrollY)) return;
     node.scrollX = Math.max(0, position.scrollX);
     node.scrollY = Math.max(0, position.scrollY);
@@ -443,7 +444,8 @@ export function initializeTabMapManager(openSidePanel?: (windowId: number) => Pr
     if (tab?.url !== node.url) tab = undefined;
     if (tab?.id !== undefined) {
       await browser.tabs.update(tab.id, { active: true });
-      await browser.tabs.sendMessage(tab.id, { type: "tab-flow-map-restore", node }).catch(() => undefined);
+      // Restoration needs no reply; a frozen target must not block later commands.
+      void browser.tabs.sendMessage(tab.id, { type: "tab-flow-map-restore", node }, { frameId: 0 }).catch(() => undefined);
     } else {
       const target = await browser.windows.getLastFocused({ windowTypes: ["normal"] }).catch(() => undefined);
       tab = await browser.tabs.create({ url: node.url, active: true, windowId: target?.id });

@@ -40,7 +40,7 @@ export function createBrowser() {
         if (tab) closedSessions.unshift({ lastModified: Math.floor(Date.now() / 1000), tab: { ...tab, sessionId: `closed-${nextSessionId++}` } });
         closedSessions.splice(25); tabs.delete(id); api.tabs.onRemoved.emit(id); api.sessions.onChanged.emit();
       }),
-      sendMessage: vi.fn(async () => undefined),
+      sendMessage: vi.fn(async (_tabId: number, _message: any, _options?: { frameId?: number }): Promise<any> => undefined),
       move: vi.fn(async (id: number, { index }: { index: number }) => {
         const tab = tabs.get(id); if (!tab) throw new Error("closed");
         const ordered = [...tabs.values()].filter((item) => item.windowId === tab.windowId).sort((a, b) => a.index - b.index);
